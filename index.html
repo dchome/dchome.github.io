@@ -1,1 +1,60 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Daniel Homer: Web Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="stylesheets/index.css" rel="stylesheet">
+    <script src="scripts/jquery-3.1.1.slim.min.js"></script>
+    <script src="scripts/index.js"></script>
+  </head>
+  <body>
+  <div id="wrapper-border"></div>
+  <div id="roll-wrapper">
+    <input type="radio" name="radio-set" class='nav-radio' checked="checked" id="home-control"/><a class="nav-link" href="#home-section">Home</a>
+    <input type="radio" name="radio-set" class='nav-radio' id="about-control"/><a class="nav-link" href="#about-section">About</a>
+    <input type="radio" name="radio-set" class='nav-radio' id="portfolio-control"/><a class="nav-link" href="#portfolio-section">Portfolio</a>
+    <input type="radio" name="radio-set" class='nav-radio' id="resume-control"/><a class="nav-link" href="#resume-section">Experience</a>
+    <input type="radio" name="radio-set" class='nav-radio' id="contact-control"/><a class="nav-link" href="#contact-section">Contact</a>
+    <div id="headings">
+      <h1>Daniel Homer</h1>
+      <h2>Full-Stack Web Developer</h2>
+    </div>
+    <div id="content-wrapper">
+
+      <section class="topic-section-1" id="home-section">
+      </section>
+
+      <section class="topic-section-2" id="about-section">
+        <div class="inner-section">
+          <h2 id="about-title">About</h2>
+          <img id="headshot" src="images/homerphoto.jpeg"/>
+          <p>
+            I'm a Brooklyn-based software engineer with strong communication skills and a passion for writing scalable and reusable code. I began my career as a corporate litigation attorney, and bring the same focus, attention to detail and work ethic to web design.
+          </p>
+        </div>
+      </section>
+
+      <section class="topic-section-1" id="portfolio-section">
+        <div class="inner-section">
+          <p>This is the portfolio section</p>
+        </div>
+      </section>
+
+      <section class="topic-section-2" id="resume-section">
+        <div class="inner-section">
+          <p>This is the resume section</p>
+        </div>
+      </section>
+
+      <section class="topic-section-1" id="contact-section">
+        <div class="inner-section">
+          <p>This is the contact section</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  </body>
+  <footer>
+  </footer>
+</html>
