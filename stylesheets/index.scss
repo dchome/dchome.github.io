@@ -50,13 +50,6 @@ input:checked + a, input:hover + a {
   color: #372E2D;
 }
 
-
-
-.nav-link:hover {
-  color: purple;
-}
-
-
 #home-control, #home-control + a {
   right: 420px;
 }
@@ -77,6 +70,8 @@ input:checked + a, input:hover + a {
   right: 20px;
 }
 
+
+
 #headings {
   position: fixed;
   bottom: 10%;
@@ -96,7 +91,8 @@ input:checked + a, input:hover + a {
 
 #content-wrapper {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .topic-section-1, .topic-section-2 {
   height: 20%;

@@ -46,9 +46,6 @@ input, .nav-link {
 input:checked + a, input:hover + a {
   color: #372E2D; }
 
-.nav-link:hover {
-  color: purple; }
-
 #home-control, #home-control + a {
   right: 420px; }
 
