@@ -65,7 +65,8 @@ body {
 }
 
 .nav-radio:checked + a, .nav-radio:hover + a {
-  color: #5B5E5C;
+  color: black;
+  background-color: rgba(255,255,255,0.5);
 }
 
 .alt-radio + a {
