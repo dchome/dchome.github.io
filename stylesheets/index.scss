@@ -38,12 +38,17 @@ body {
   z-index: 1000;
 }
 
+.nav-link {
+  z-index: 999;
+}
+
 .nav-radio, .nav-link {
   position: fixed;
   top: 35px;
   height: 34px;
   line-height: 34px;
-  width: 100px;
+  width: 90px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
@@ -51,27 +56,35 @@ body {
 }
 
 .nav-radio:checked + a, .nav-radio:hover + a {
-  color: #372E2D;
+  color: #5B5E5C;
+}
+
+.alt-radio + a {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.alt-radio:checked +a, .alt-radio:hover + a {
+  background-color: rgba(255,255,255,0.5);
 }
 
 #home-control, #home-control + a {
-  right: 420px;
+  right: 430px;
 }
 
 #about-control, #about-control + a {
-  right: 320px;
+  right: 330px;
 }
 
 #portfolio-control, #portfolio-control + a {
-  right: 220px;
+  right: 230px;
 }
 
 #resume-control, #resume-control + a {
-  right: 120px;
+  right: 130px;
 }
 
 #contact-control, #contact-control + a {
-  right: 20px;
+  right: 30px;
 }
 
 #headings {
@@ -83,11 +96,13 @@ body {
   h1 {
     font-size: 3.5em;
     letter-spacing: 0.05em;
+    overflow: hidden;
   }
 
   h2 {
     font-size: 1.5em;
     letter-spacing: 0.03em;
+    overflow: hidden;
   }
 }
 
@@ -126,6 +141,7 @@ body {
   margin-top: -125px;
   box-shadow: inset 3px 3px 8px gray, 2px 2px 3px black;
   display: none;
+  z-index: 900;
 }
 
 #about-radio-wrapper {
@@ -136,7 +152,7 @@ body {
   margin-left: -300px;
   margin-top: 135px;
   top: 28%;
-  z-index: 1000;
+  z-index: 900;
   text-align: center;
 }
 
