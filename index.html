@@ -11,45 +11,59 @@
   <body>
   <div id="wrapper-border"></div>
   <div id="roll-wrapper">
-    <input type="radio" name="radio-set" class='nav-radio' checked="checked" id="home-control"/><a class="nav-link" id='home-link' href="#home-section">Home</a>
+    <input type="radio" name="radio-set" class='nav-radio' id="home-control"/><a class="nav-link" id='home-link' href="#home-section">Home</a>
     <input type="radio" name="radio-set" class='nav-radio' id="about-control"/><a class="nav-link" id='about-link' href="#about-section">About</a>
     <input type="radio" name="radio-set" class='nav-radio' id="portfolio-control"/><a class="nav-link" id='portfolio-link' href="#portfolio-section">Portfolio</a>
     <input type="radio" name="radio-set" class='nav-radio' id="resume-control"/><a class="nav-link" id='resume-link' href="#resume-section">Experience</a>
     <input type="radio" name="radio-set" class='nav-radio' id="contact-control"/><a class="nav-link" id='contact-link' href="#contact-section">Contact</a>
     <div id="headings">
-      <h1>Daniel Homer</h1>
-      <h2>Full-Stack Web Developer</h2>
+      <h1 id='main-heading'>Daniel Homer</h1>
+      <h2 id='subheading'>Full-Stack Web Developer</h2>
     </div>
     <div id="content-wrapper">
 
-      <section class="topic-section-1" id="home-section">
+      <section class="topic-section grayscale" id="home-section">
       </section>
 
-      <section class="topic-section-2" id="about-section">
+      <section class="topic-section grayscale" id="about-section">
         <div class="inner-section">
-          <h2 id="about-title">About</h2>
-          <img id="headshot" src="images/homerphoto.jpeg"/>
-          <p>
-            I'm a Brooklyn-based software engineer with strong communication skills and a passion for writing scalable and reusable code. I began my career as a corporate litigation attorney, and bring the same focus, attention to detail and work ethic to web design.
-          </p>
+
+          <img class='portrait' id="little-dan" src="images/little_dan.jpg"/>
+          <p class='portrait-p' id="little-dan-p">I grew up in the outskirts of Dover, Delaware, between an Amish farm and a golf course. I have always loved figuring out how things work and learning new skills.</p>
+
+          <img class='portrait' id="college-dan" src="images/college_dan.jpeg"/>
+          <p class='portrait-p' id="college-dan-p">I attended the College of William and Mary, where I studied philosophy and economics (and graduated with highest honors). Then I got a JD from the University of Virginia School of Law.</p>
+
+          <img class='portrait' id="lawyer-dan" src="images/lawyer_dan.jpeg"/>
+          <p class='portrait-p' id="lawyer-dan-p">I worked as a litigation attorney at top firms in Delaware and New York. The job required extremely strong oral and written communication skills, problem-solving, and the ability to work as part of a team, all in a very high-pressure environment.</p>
+
+          <img class='portrait' id="computer-dan" src="images/computer_dan.jpeg"/>
+          <p class='portrait-p' id="computer-dan-p">When I was ready for my next challenge I began exploring web development. In early 2016 I attended DevBootCamp, a 19-week intensive web development program. Since then, I've been building websites and apps and writing clean, elegant code.</p>
+
+          <div id="about-radio-wrapper">
+            <input type="radio" name="about-radio-set" class='about-radio' checked="checked" id="little-control"/>
+            <input type="radio" name="about-radio-set" class='about-radio' id="college-control"/>
+            <input type="radio" name="about-radio-set" class='about-radio' id="lawyer-control"/>
+            <input type="radio" name="about-radio-set" class='about-radio' id="computer-control"/>
+          </div>
         </div>
       </section>
 
-      <section class="topic-section-1" id="portfolio-section">
+      <section class="topic-section grayscale" id="portfolio-section">
         <div class="inner-section">
-          <p>This is the portfolio section</p>
+          <p></p>
         </div>
       </section>
 
-      <section class="topic-section-2" id="resume-section">
+      <section class="topic-section grayscale" id="resume-section">
         <div class="inner-section">
-          <p>This is the resume section</p>
+          <p></p>
         </div>
       </section>
 
-      <section class="topic-section-1" id="contact-section">
+      <section class="topic-section grayscale" id="contact-section">
         <div class="inner-section">
-          <p>This is the contact section</p>
+          <p></p>
         </div>
       </section>
     </div>
