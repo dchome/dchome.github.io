@@ -1,7 +1,6 @@
 var danQuery = {
 
   scrollToSection: function(section) {
-    console.log('it worked');
     $('html, body').animate({
       scrollTop: section.offset().top
     }, 600);
@@ -10,21 +9,32 @@ var danQuery = {
   fadeAboutContent: function() {
     $('.portrait').fadeOut(1200);
     $('.portrait-p').fadeOut(1200);
-  }
+  },
 
-}
+  handleGrayscale: function(idx) {
+    $('.topic-section').addClass('grayscale');
+    switch (idx) {
+      case 0:
+        $('#home-section').removeClass('grayscale');
+        break;
+      case 1:
+        $('#about-section').removeClass('grayscale');
+        break;
+      case 2:
+        $('#portfolio-section').removeClass('grayscale');
+        break;
+      case 3:
+        $('#resume-section').removeClass('grayscale');
+        break;
+      case 4:
+        $('#contact-section').removeClass('grayscale');
+        break;
+      default:
+    };
+  },
 
-$(document).ready(function(){
-  var windowHeight = $(window).height();
-
-  $(window).resize(function(){
-    windowHeight = $(window).height();
-  });
-
-  $(window).scroll(function(){
-
-    if ($('body').scrollTop() >= windowHeight - 40 &&
-        $('body').scrollTop() <= (windowHeight * 4) - 60) {
+  handleNav: function(conditionForNav) {
+    if(conditionForNav) {
       $('.nav-radio').fadeIn(1200, function(){
         $(this).addClass('alt-radio');
       });
@@ -33,17 +43,19 @@ $(document).ready(function(){
         $(this).removeClass('alt-radio');
       });
     };
+  },
 
-    switch (Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight)) {
+  handleHeadings(idx) {
+    switch (idx) {
       case 0:
         if($('#main-heading').text() != 'Daniel Homer') {
           $('#headings').slideUp('slow', function(){
-            console.log('home out')
             $('#main-heading').text('Daniel Homer');
             $('#subheading').text('Full-Stack Web Developer');
             $('#headings').slideDown('slow');
           });
           $('#home-control').prop('checked', true);
+          danQuery.handleGrayscale(0);
         };
         break;
 
@@ -55,6 +67,7 @@ $(document).ready(function(){
             $('#headings').slideDown('slow');
           });
           $('#about-control').prop('checked', true);
+          danQuery.handleGrayscale(1);
         };
         break;
 
@@ -66,6 +79,7 @@ $(document).ready(function(){
             $('#headings').slideDown('slow');
           });
           $('#portfolio-control').prop('checked', true);
+          danQuery.handleGrayscale(2);
         };
         break;
 
@@ -77,6 +91,7 @@ $(document).ready(function(){
             $('#headings').slideDown('slow');
           });
           $('#resume-control').prop('checked', true);
+          danQuery.handleGrayscale(3);
         };
         break;
 
@@ -88,11 +103,39 @@ $(document).ready(function(){
             $('#headings').slideDown('slow');
           });
           $('#contact-control').prop('checked', true);
+          danQuery.handleGrayscale(4);
         };
         break;
 
     default:
     }
+  }
+}
+
+$(document).ready(function(){  
+  var windowHeight = $(window).height();
+
+  var idxForAnimations = function() {
+    return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
+  }
+
+  var conditionForNav = function() {
+    return $('body').scrollTop() >= windowHeight - 40 &&
+      $('body').scrollTop() <= (windowHeight * 4) - 60
+  }
+
+  danQuery.handleGrayscale(idxForAnimations());
+  danQuery.handleNav(conditionForNav());
+  danQuery.handleHeadings(idxForAnimations());
+
+  $(window).resize(function(){
+    windowHeight = $(window).height();
+  });
+
+  $(window).scroll(function(){
+
+    danQuery.handleNav(conditionForNav());
+    danQuery.handleHeadings(idxForAnimations());
 
   });
 
