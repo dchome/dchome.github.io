@@ -13,24 +13,7 @@ var danQuery = {
 
   handleGrayscale: function(idx) {
     $('.topic-section').addClass('grayscale');
-    switch (idx) {
-      case 0:
-        $('#home-section').removeClass('grayscale');
-        break;
-      case 1:
-        $('#about-section').removeClass('grayscale');
-        break;
-      case 2:
-        $('#portfolio-section').removeClass('grayscale');
-        break;
-      case 3:
-        $('#resume-section').removeClass('grayscale');
-        break;
-      case 4:
-        $('#contact-section').removeClass('grayscale');
-        break;
-      default:
-    };
+    $('#section-' + idx ).removeClass('grayscale');
   },
 
   handleNav: function(conditionForNav) {
@@ -128,24 +111,29 @@ $(document).ready(function(){
 
   });
 
-  $("#home-control").on('click', function(event) {
-    danQuery.scrollToSection($('#home-section'));
-  });
+  // $("#home-control").on('click', function(event) {
+  //   danQuery.scrollToSection($('#home-section'));
+  // });
+  //
+  // $("#about-control").on('click', function(event){
+  //   danQuery.scrollToSection($('#about-section'));
+  // });
+  //
+  // $("#portfolio-control").on('click', function(event){
+  //   danQuery.scrollToSection($('#portfolio-section'));
+  // });
+  //
+  // $("#resume-control").on('click', function(event){
+  //   danQuery.scrollToSection($('#resume-section'));
+  // })
+  //
+  // $("#contact-control").on('click', function(event){
+  //   danQuery.scrollToSection($('#contact-section'));
+  // })
 
-  $("#about-control").on('click', function(event){
-    danQuery.scrollToSection($('#about-section'));
-  });
-
-  $("#portfolio-control").on('click', function(event){
-    danQuery.scrollToSection($('#portfolio-section'));
-  });
-
-  $("#resume-control").on('click', function(event){
-    danQuery.scrollToSection($('#resume-section'));
-  })
-
-  $("#contact-control").on('click', function(event){
-    danQuery.scrollToSection($('#contact-section'));
+  $('.nav-radio').click(function(event){
+    var idx = event.target.id.split('').pop();
+    danQuery.scrollToSection($('#section-' + idx));
   })
 
   $('#little-control').on('click', function(event){

@@ -81,23 +81,23 @@ body {
   background-color: rgba(255,255,255,0.5);
 }
 
-#home-control, #home-control + a {
+#control-0, #control-0 + a {
   right: 430px;
 }
 
-#about-control, #about-control + a {
+#control-1, #control-1 + a {
   right: 330px;
 }
 
-#portfolio-control, #portfolio-control + a {
+#control-2, #control-2 + a {
   right: 230px;
 }
 
-#resume-control, #resume-control + a {
+#control-3, #control-3 + a {
   right: 130px;
 }
 
-#contact-control, #contact-control + a {
+#control-4, #control-4 + a {
   right: 30px;
 }
 
@@ -125,29 +125,23 @@ body {
   height: 100%;
 }
 
-.topic-section {
-  height: 20%;
-  width: 100%;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
 
-#home-section {
+#section-0 {
   background: url(../images/computer.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
 
-#about-section {
+#section-1 {
   top: 20%;
   background: url(../images/desk.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .portrait {
   height: 250px;
@@ -201,28 +195,39 @@ body {
   display: inherit;
 }
 
-#portfolio-section {
+#section-2 {
   top: 40%;
   background: url(../images/blackboard.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
 
-#resume-section {
+#section-3 {
   top: 60%;
   background: url(../images/suit.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
 
-#contact-section {
+#section-4 {
   top: 80%;
   background: url(../images/phones.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
 
+.topic-section {
+  height: 20%;
+  width: 100%;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
 /*# sourceMappingURL=index.css.map */
