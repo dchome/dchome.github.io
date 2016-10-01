@@ -111,26 +111,6 @@ $(document).ready(function(){
 
   });
 
-  // $("#home-control").on('click', function(event) {
-  //   danQuery.scrollToSection($('#home-section'));
-  // });
-  //
-  // $("#about-control").on('click', function(event){
-  //   danQuery.scrollToSection($('#about-section'));
-  // });
-  //
-  // $("#portfolio-control").on('click', function(event){
-  //   danQuery.scrollToSection($('#portfolio-section'));
-  // });
-  //
-  // $("#resume-control").on('click', function(event){
-  //   danQuery.scrollToSection($('#resume-section'));
-  // })
-  //
-  // $("#contact-control").on('click', function(event){
-  //   danQuery.scrollToSection($('#contact-section'));
-  // })
-
   $('.nav-radio').click(function(event){
     var idx = event.target.id.split('').pop();
     danQuery.scrollToSection($('#section-' + idx));

@@ -113,6 +113,19 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+#under-construction {
+  position: absolute;
+  left: 55%;
+  top: 7.5%;
+  width: 25%;
+  min-width: 300px;
+  color: white;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 2px black;
+  font-weight: 100;
+  line-height: 30px; }
+
 #section-1 {
   top: 20%;
   background: url(../images/desk.jpeg) no-repeat center center;
@@ -134,7 +147,7 @@ body {
   display: none;
   z-index: 900; }
 
-#about-radio-wrapper {
+#projects-radio-wrapper {
   height: 34px;
   width: 250px;
   position: absolute;
@@ -145,7 +158,7 @@ body {
   z-index: 900;
   text-align: center; }
 
-.about-radio {
+.projects-radio {
   width: 22%;
   vertical-align: top;
   margin-right: -30px; }
@@ -164,7 +177,7 @@ body {
   line-height: 30px;
   display: none; }
 
-#little-dan, #little-dan-p {
+#little-dan {
   display: inherit; }
 
 #section-2 {
