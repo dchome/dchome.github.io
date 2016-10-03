@@ -16,12 +16,16 @@ var danQuery = {
     $('#section-' + idx ).removeClass('grayscale');
   },
 
-  handleNav: function(conditionForNav) {
+  handleNavBackground: function(conditionForNav) {
     if(conditionForNav) {
       $('.nav-radio').addClass('alt-radio');
     } else {
       $('.nav-radio').removeClass('alt-radio');
     };
+  },
+
+  handleNavSelect: function(idx) {
+    $('#control-' + idx).prop('checked', true);
   },
 
   handleHeadings(idx) {
@@ -84,14 +88,14 @@ $(document).ready(function(){
   }
 
   var conditionForNav = function() {
-    return $('body').scrollTop() >= windowHeight - 40 &&
-      $('body').scrollTop() <= (windowHeight * 4) - 60
+    return $('body').scrollTop() >= windowHeight - 40
   }
 
   var oldIdx = getAnimationIdx();
 
   danQuery.handleGrayscale(oldIdx);
-  danQuery.handleNav(oldIdx);
+  danQuery.handleNavSelect(oldIdx);
+  danQuery.handleNavBackground(oldIdx);
   danQuery.handleHeadings(oldIdx);
 
   $(window).resize(function(){
@@ -104,10 +108,11 @@ $(document).ready(function(){
     if (oldIdx !== newIdx) {
       danQuery.handleHeadings(newIdx);
       danQuery.handleGrayscale(newIdx);
+      danQuery.handleNavSelect(newIdx);
       oldIdx = newIdx;
     }
 
-    danQuery.handleNav(conditionForNav());
+    danQuery.handleNavBackground(conditionForNav());
 
   });
 
