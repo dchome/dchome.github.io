@@ -132,15 +132,61 @@ body {
   background-size: cover; }
 
 .portrait {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   position: absolute;
-  left: 60%;
-  top: 30%;
-  border: 15px solid white;
+  left: 25%;
+  margin-left: -65px;
+  top: 33%;
+  border: 10px solid white;
   margin-top: -125px;
   box-shadow: inset 3px 3px 8px gray, 2px 2px 3px black;
   z-index: 900; }
+
+.portrait-p {
+  position: absolute;
+  left: 25%;
+  margin-left: -105px;
+  top: 35%;
+  width: 250px;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 1px black;
+  text-align: justify;
+  font-weight: 100;
+  line-height: 30px; }
+
+#skills-wrapper {
+  position: absolute;
+  top: 32%;
+  left: 75%;
+  margin-left: -200px;
+  width: 400px;
+  text-align: center;
+  font-size: 1em;
+  color: white; }
+
+.skill-name {
+  list-style: none;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5px;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  text-align: left;
+  padding-left: 5px; }
+
+.skill-bar {
+  color: transparent;
+  height: 100%;
+  background: white;
+  margin-top: -36px;
+  margin-left: -5px;
+  width: 0; }
 
 #projects-radio-wrapper {
   height: 34px;
@@ -157,20 +203,6 @@ body {
   width: 22%;
   vertical-align: top;
   margin-right: -30px; }
-
-.portrait-p {
-  position: absolute;
-  left: 15%;
-  top: 37.5%;
-  width: 280px;
-  height: 280px;
-  color: white;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  text-shadow: 0px 2px black;
-  text-align: justify;
-  font-weight: 100;
-  line-height: 30px; }
 
 #section-2 {
   top: 50%;
