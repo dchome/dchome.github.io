@@ -46,7 +46,7 @@ var danQuery = {
 
       case 2:
         $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Projects');
+          $('#main-heading').text('Skills');
           $('#subheading').text('');
           $('#headings').slideDown('slow');
         });
@@ -55,7 +55,7 @@ var danQuery = {
 
       case 3:
         $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Experience');
+          $('#main-heading').text('Projects');
           $('#subheading').text('');
           $('#headings').slideDown('slow');
         });
