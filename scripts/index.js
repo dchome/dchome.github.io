@@ -6,14 +6,15 @@ var danQuery = {
     }, 600);
   },
 
-  fadeAboutContent: function() {
-    $('.portrait').fadeOut(1200);
-    $('.portrait-p').fadeOut(1200);
-  },
-
   handleGrayscale: function(idx) {
     $('.topic-section').addClass('grayscale');
     $('#section-' + idx ).removeClass('grayscale');
+  },
+
+  handleInnerSection: function(idx) {
+    console.log('called');
+    $('.inner-section').fadeOut("slow");
+    $('#section-' + idx + ' .inner-section').fadeIn("slow");
   },
 
   handleNavBackground: function(conditionForNav) {
@@ -88,6 +89,7 @@ $(document).ready(function(){
   danQuery.handleNavSelect(oldIdx);
   danQuery.handleNavBackground(oldIdx);
   danQuery.handleHeadings(oldIdx);
+  danQuery.handleInnerSection(oldIdx);
 
   $(window).resize(function(){
     windowHeight = $(window).height();
@@ -100,44 +102,12 @@ $(document).ready(function(){
       danQuery.handleHeadings(newIdx);
       danQuery.handleGrayscale(newIdx);
       danQuery.handleNavSelect(newIdx);
+      danQuery.handleInnerSection(newIdx);
       oldIdx = newIdx;
     }
 
     danQuery.handleNavBackground(conditionForNav());
 
-  });
-
-  $('.nav-radio').click(function(event){
-    var idx = event.target.id.split('').pop();
-    danQuery.scrollToSection($('#section-' + idx));
-  })
-
-  $('#little-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#little-dan').fadeIn(600);
-    $('#little-dan-p').fadeIn(600);
-  });
-
-  $('#college-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#college-dan').fadeIn(600);
-    $('#college-dan-p').fadeIn(600);
-  });
-
-  $('#lawyer-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#lawyer-dan').fadeIn(600);
-    $('#lawyer-dan-p').fadeIn(600);
-  });
-
-  $('#computer-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#computer-dan').fadeIn(600);
-    $('#computer-dan-p').fadeIn(600);
   });
 
 });
