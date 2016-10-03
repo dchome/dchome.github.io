@@ -14,7 +14,7 @@ var danQuery = {
   handleInnerSection: function(idx) {
     $('.inner-section').fadeOut("slow");
     $('#section-' + idx + ' .inner-section').fadeIn("slow", function(){
-      danQuery.handleSkillBars();
+      danQuery.handleSkillBars(idx);
     });
   },
 
@@ -45,10 +45,15 @@ var danQuery = {
     });
   },
 
-  handleSkillBars() {
+  handleSkillBars(idx) {
     $('.skill-bar').each(function(){
-      var width = parseInt($(this).html())*25;
-      $(this).animate({width: width}, "slow");
+      if (idx === 1) {
+        var width = parseInt($(this).html())*25;
+        $(this).animate({width: width}, "slow");
+      }
+      else {
+        $(this).width(0);
+      }
     })
   }
 }
@@ -89,6 +94,10 @@ $(document).ready(function(){
 
     danQuery.handleNavBackground(conditionForNav());
 
+  });
+
+  $('.nav-radio').click(function(event){
+    danQuery.scrollToSection($('#section-' + event.target.id.split("").pop()));
   });
 
 });
