@@ -161,8 +161,7 @@ body {
 .portrait-p {
   position: absolute;
   left: 15%;
-  top: 30%;
-  margin-top: -100px;
+  top: 37.5%;
   width: 280px;
   height: 280px;
   color: white;
@@ -172,9 +171,6 @@ body {
   text-align: justify;
   font-weight: 100;
   line-height: 30px; }
-
-#little-dan {
-  display: inherit; }
 
 #section-2 {
   top: 50%;
