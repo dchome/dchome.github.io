@@ -50,7 +50,7 @@ var danQuery = {
 
       case 2:
         $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Skills');
+          $('#main-heading').text('Projects');
           $('#subheading').text('');
           $('#headings').slideDown('slow');
         });
@@ -59,20 +59,11 @@ var danQuery = {
 
       case 3:
         $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Projects');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#resume-control').prop('checked', true);
-        break;
-
-      case 4:
-        $('#headings').slideUp( 'slow', function(){
           $('#main-heading').text('Contact Me');
           $('#subheading').text('');
           $('#headings').slideDown('slow');
         });
-        $('#contact-control').prop('checked', true);
+        $('#resume-control').prop('checked', true);
         break;
 
       default:
