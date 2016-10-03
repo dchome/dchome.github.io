@@ -24,7 +24,7 @@ body {
 #roll-wrapper {
   position: absolute;
   width: 100%;
-  height: 500%;
+  height: 400%;
   top: 0;
   left: 0;
   padding: 20px;
@@ -82,24 +82,21 @@ body {
 }
 
 #control-0, #control-0 + a {
-  right: 430px;
-}
-
-#control-1, #control-1 + a {
   right: 330px;
 }
 
-#control-2, #control-2 + a {
+#control-1, #control-1 + a {
   right: 230px;
 }
 
-#control-3, #control-3 + a {
+#control-2, #control-2 + a {
   right: 130px;
 }
 
-#control-4, #control-4 + a {
+#control-3, #control-3 + a {
   right: 30px;
 }
+
 
 #headings {
   position: fixed;
@@ -149,7 +146,7 @@ body {
 }
 
 #section-1 {
-  top: 20%;
+  top: 25%;
   background: url(../images/suit.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -209,7 +206,7 @@ body {
 }
 
 #section-2 {
-  top: 40%;
+  top: 50%;
   background: url(../images/blackboard.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -218,16 +215,7 @@ body {
 }
 
 #section-3 {
-  top: 60%;
-  background: url(../images/desk.jpeg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#section-4 {
-  top: 80%;
+  top: 75%;
   background: url(../images/phones.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -236,7 +224,7 @@ body {
 }
 
 .topic-section {
-  height: 20%;
+  height: 25%;
   width: 100%;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
