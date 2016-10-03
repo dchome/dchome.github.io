@@ -12,9 +12,10 @@ var danQuery = {
   },
 
   handleInnerSection: function(idx) {
-    console.log('called');
     $('.inner-section').fadeOut("slow");
-    $('#section-' + idx + ' .inner-section').fadeIn("slow");
+    $('#section-' + idx + ' .inner-section').fadeIn("slow", function(){
+      danQuery.handleSkillBars();
+    });
   },
 
   handleNavBackground: function(conditionForNav) {
@@ -42,6 +43,13 @@ var danQuery = {
       $('#subheading').text(danQuery.headingsDictionary[idx][1]);
       $('#headings').slideDown('slow');
     });
+  },
+
+  handleSkillBars() {
+    $('.skill-bar').each(function(){
+      var width = parseInt($(this).html())*25;
+      $(this).animate({width: width}, "slow");
+    })
   }
 }
 

@@ -188,18 +188,24 @@ body {
 
 #skills-wrapper {
   position: absolute;
-  top: 32%;
+  top: 36%;
+  margin-top: -125px;
   left: 75%;
-  margin-left: -200px;
-  width: 400px;
+  margin-left: -250px;
+  width: 500px;
   text-align: center;
   font-size: 1em;
   color: white;
 }
 
+#skills-include {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
 .skill-name {
   list-style: none;
-  width: 50%;
+  width: 250px;
   margin-left: 25%;
   margin-top: 5px;
   background: rgba(128, 128, 128, 0.7);
@@ -214,7 +220,7 @@ body {
 .skill-bar {
   color: transparent;
   height: 100%;
-  background: white;
+  background: rgba(221, 100, 38, 0.7);
   margin-top: -36px;
   margin-left: -5px;
   width: 0;
