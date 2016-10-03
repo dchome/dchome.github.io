@@ -29,46 +29,19 @@ var danQuery = {
     $('#control-' + idx).prop('checked', true);
   },
 
+  headingsDictionary: {
+    0: ['Daniel Homer', 'Full-Stack Web Developer'],
+    1: ['About Me', ''],
+    2: ['Projects', ''],
+    3: ['Contact Me', '']
+  },
+
   handleHeadings(idx) {
-    switch (idx) {
-      case 0:
-        $('#headings').slideUp('slow', function(){
-          $('#main-heading').text('Daniel Homer');
-          $('#subheading').text('Full-Stack Web Developer');
-          $('#headings').slideDown('slow');
-        });
-        $('#home-control').prop('checked', true);
-        break;
-
-      case 1:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('About Me');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#about-control').prop('checked', true);
-        break;
-
-      case 2:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Projects');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#portfolio-control').prop('checked', true);
-        break;
-
-      case 3:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Contact Me');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#resume-control').prop('checked', true);
-        break;
-
-      default:
-    }
+    $('#headings').slideUp('slow', function(){
+      $('#main-heading').text(danQuery.headingsDictionary[idx][0]);
+      $('#subheading').text(danQuery.headingsDictionary[idx][1]);
+      $('#headings').slideDown('slow');
+    });
   }
 }
 

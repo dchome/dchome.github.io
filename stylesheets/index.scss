@@ -100,10 +100,13 @@ body {
 
 #headings {
   position: fixed;
-  bottom: 15%;
-  left: 5%;
+  top: 15%;
+  left: 25%;
+  width: 400px;
+  margin-left: -200px;
   z-index: 1500;
   color: white;
+  text-align: center;
   h1 {
     font-size: 3.5em;
     letter-spacing: 0.05em;
@@ -159,8 +162,8 @@ body {
   width: 150px;
   position: absolute;
   left: 25%;
-  margin-left: -65px;
-  top: 33%;
+  margin-left: -75px;
+  top: 36%;
   border: 5px solid white;
   margin-top: -125px;
   box-shadow: inset 3px 3px 8px gray, 2px 2px 3px black;
@@ -171,8 +174,8 @@ body {
 .portrait-p {
   position: absolute;
   left: 25%;
-  margin-left: -105px;
-  top: 35%;
+  margin-left: -125px;
+  top: 38%;
   width: 250px;
   color: white;
   font-size: 1em;
