@@ -11,9 +11,9 @@ var danQuery = {
     $('#section-' + idx ).removeClass('grayscale');
   },
 
-  handleInnerSection: function(idx) {
-    $('.inner-section').fadeOut("slow");
-    $('#section-' + idx + ' .inner-section').fadeIn("slow", function(){
+  handleColumns: function(idx) {
+    $('.col').fadeOut("slow");
+    $('#section-' + idx + ' .col').fadeIn("slow", function(){
       danQuery.handleSkillBars(idx);
     });
   },
@@ -75,7 +75,7 @@ $(document).ready(function(){
   danQuery.handleNavSelect(oldIdx);
   danQuery.handleNavBackground(oldIdx);
   danQuery.handleHeadings(oldIdx);
-  danQuery.handleInnerSection(oldIdx);
+  danQuery.handleColumns(oldIdx);
 
   $(window).resize(function(){
     windowHeight = $(window).height();
@@ -88,7 +88,7 @@ $(document).ready(function(){
       danQuery.handleHeadings(newIdx);
       danQuery.handleGrayscale(newIdx);
       danQuery.handleNavSelect(newIdx);
-      danQuery.handleInnerSection(newIdx);
+      danQuery.handleColumns(newIdx);
       oldIdx = newIdx;
     }
 
