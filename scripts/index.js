@@ -46,9 +46,10 @@ var danQuery = {
   },
 
   handleSkillBars(idx) {
+    var barWidth = $('#skill-1').width();
     $('.skill-bar').each(function(){
       if (idx === 1) {
-        var width = parseInt($(this).html())*25;
+        var width = parseFloat($(this).html())*barWidth*0.2;
         $(this).animate({width: width}, "slow");
       }
       else {
@@ -62,7 +63,11 @@ $(document).ready(function(){
   var windowHeight = $(window).height();
 
   var getAnimationIdx = function() {
-    return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
+    if ($(window).width() > 850) {
+      return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
+    } else {
+      return Math.floor(($('body').scrollTop() + windowHeight/2)/(windowHeight * 2))
+    }
   }
 
   var conditionForNav = function() {
