@@ -86,10 +86,15 @@ body {
 
 #headings {
   position: fixed;
-  bottom: 15%;
-  left: 5%;
+  top: 50%;
+  margin-top: -100px;
+  height: 200px;
+  left: 20%;
+  width: 400px;
+  margin-left: -200px;
   z-index: 1500;
-  color: white; }
+  color: white;
+  text-align: center; }
   #headings h1 {
     font-size: 3.5em;
     letter-spacing: 0.05em;
@@ -102,6 +107,9 @@ body {
 #content-wrapper {
   width: 100%;
   height: 100%; }
+  @media (max-width: 850px) {
+    #content-wrapper {
+      height: 200%; } }
 
 #section-0 {
   background: url(../images/computer.jpg) no-repeat center center;
@@ -131,16 +139,79 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+#portrait-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: auto; }
+
 .portrait {
-  height: 250px;
-  width: 250px;
-  position: absolute;
-  left: 60%;
-  top: 30%;
-  border: 15px solid white;
-  margin-top: -125px;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 40px;
+  height: auto;
+  border: 5px solid white;
   box-shadow: inset 3px 3px 8px gray, 2px 2px 3px black;
   z-index: 900; }
+
+.portrait-p {
+  margin-left: 20%;
+  width: 60%;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 1px black;
+  text-align: justify;
+  font-weight: 100;
+  line-height: 30px; }
+
+#skills-wrapper {
+  position: relative;
+  top: 36%;
+  padding: 20px;
+  right: 16.5%;
+  margin-right: -200px;
+  width: 400px;
+  text-align: center;
+  color: white;
+  height: 500px;
+  border-radius: 2px; }
+
+#skills-include {
+  width: 65%;
+  margin-left: 17.5%;
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 1px black;
+  background: rgba(128, 128, 128, 0.7);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
+
+.skill-name {
+  list-style: none;
+  width: 65%;
+  margin-left: 17.5%;
+  margin-top: 5px;
+  background: rgba(128, 128, 128, 0.7);
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  text-align: left;
+  padding-left: 5px; }
+
+.skill-bar {
+  color: transparent;
+  height: 100%;
+  background: rgba(221, 100, 38, 0.7);
+  margin-top: -36px;
+  margin-left: -5px;
+  width: 0; }
 
 #projects-radio-wrapper {
   height: 34px;
@@ -157,20 +228,6 @@ body {
   width: 22%;
   vertical-align: top;
   margin-right: -30px; }
-
-.portrait-p {
-  position: absolute;
-  left: 15%;
-  top: 37.5%;
-  width: 280px;
-  height: 280px;
-  color: white;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  text-shadow: 0px 2px black;
-  text-align: justify;
-  font-weight: 100;
-  line-height: 30px; }
 
 #section-2 {
   top: 50%;
@@ -190,11 +247,41 @@ body {
 
 .topic-section {
   height: 25%;
+  min-height: 580px;
   width: 100%;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease; }
+
+.inner-section {
+  height: 100%;
+  width: 66%;
+  margin-left: 33%; }
+
+.col {
+  float: left;
+  height: 100%;
+  min-height: 500px;
+  width: 50%;
+  min-width: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: auto;
+  color: white; }
+  @media (max-width: 850px) {
+    .col {
+      height: 50%;
+      width: 100%; } }
+
+#col-left {
+  position: fixed;
+  min-height: 500px;
+  width: 33%;
+  min-width: 250px;
+  z-index: 1000; }
 
 /*# sourceMappingURL=index.css.map */
 

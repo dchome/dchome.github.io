@@ -6,14 +6,16 @@ var danQuery = {
     }, 600);
   },
 
-  fadeAboutContent: function() {
-    $('.portrait').fadeOut(1200);
-    $('.portrait-p').fadeOut(1200);
-  },
-
   handleGrayscale: function(idx) {
     $('.topic-section').addClass('grayscale');
     $('#section-' + idx ).removeClass('grayscale');
+  },
+
+  handleColumns: function(idx) {
+    $('.col').fadeOut("slow");
+    $('#section-' + idx + ' .col').fadeIn("slow", function(){
+      danQuery.handleSkillBars(idx);
+    });
   },
 
   handleNavBackground: function(conditionForNav) {
@@ -28,46 +30,32 @@ var danQuery = {
     $('#control-' + idx).prop('checked', true);
   },
 
+  headingsDictionary: {
+    0: ['Daniel Homer', 'Full-Stack Web Developer'],
+    1: ['About Me', ''],
+    2: ['Projects', ''],
+    3: ['Contact Me', '']
+  },
+
   handleHeadings(idx) {
-    switch (idx) {
-      case 0:
-        $('#headings').slideUp('slow', function(){
-          $('#main-heading').text('Daniel Homer');
-          $('#subheading').text('Full-Stack Web Developer');
-          $('#headings').slideDown('slow');
-        });
-        $('#home-control').prop('checked', true);
-        break;
+    $('#headings').slideUp('slow', function(){
+      $('#main-heading').text(danQuery.headingsDictionary[idx][0]);
+      $('#subheading').text(danQuery.headingsDictionary[idx][1]);
+      $('#headings').slideDown('slow');
+    });
+  },
 
-      case 1:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('About Me');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#about-control').prop('checked', true);
-        break;
-
-      case 2:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Projects');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#portfolio-control').prop('checked', true);
-        break;
-
-      case 3:
-        $('#headings').slideUp( 'slow', function(){
-          $('#main-heading').text('Contact Me');
-          $('#subheading').text('');
-          $('#headings').slideDown('slow');
-        });
-        $('#resume-control').prop('checked', true);
-        break;
-
-      default:
-    }
+  handleSkillBars(idx) {
+    var barWidth = $('#skill-1').width();
+    $('.skill-bar').each(function(){
+      if (idx === 1) {
+        var width = parseFloat($(this).html())*barWidth*0.2;
+        $(this).animate({width: width}, "slow");
+      }
+      else {
+        $(this).width(0);
+      }
+    })
   }
 }
 
@@ -75,7 +63,11 @@ $(document).ready(function(){
   var windowHeight = $(window).height();
 
   var getAnimationIdx = function() {
-    return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
+    if ($(window).width() > 850) {
+      return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
+    } else {
+      return Math.floor(($('body').scrollTop() + windowHeight/2)/(windowHeight * 2))
+    }
   }
 
   var conditionForNav = function() {
@@ -88,6 +80,7 @@ $(document).ready(function(){
   danQuery.handleNavSelect(oldIdx);
   danQuery.handleNavBackground(oldIdx);
   danQuery.handleHeadings(oldIdx);
+  danQuery.handleColumns(oldIdx);
 
   $(window).resize(function(){
     windowHeight = $(window).height();
@@ -100,6 +93,7 @@ $(document).ready(function(){
       danQuery.handleHeadings(newIdx);
       danQuery.handleGrayscale(newIdx);
       danQuery.handleNavSelect(newIdx);
+      danQuery.handleColumns(newIdx);
       oldIdx = newIdx;
     }
 
@@ -108,36 +102,7 @@ $(document).ready(function(){
   });
 
   $('.nav-radio').click(function(event){
-    var idx = event.target.id.split('').pop();
-    danQuery.scrollToSection($('#section-' + idx));
-  })
-
-  $('#little-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#little-dan').fadeIn(600);
-    $('#little-dan-p').fadeIn(600);
-  });
-
-  $('#college-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#college-dan').fadeIn(600);
-    $('#college-dan-p').fadeIn(600);
-  });
-
-  $('#lawyer-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#lawyer-dan').fadeIn(600);
-    $('#lawyer-dan-p').fadeIn(600);
-  });
-
-  $('#computer-control').on('click', function(event){
-    danQuery.fadeAboutContent();
-
-    $('#computer-dan').fadeIn(600);
-    $('#computer-dan-p').fadeIn(600);
+    danQuery.scrollToSection($('#section-' + event.target.id.split("").pop()));
   });
 
 });
