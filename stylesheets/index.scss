@@ -165,20 +165,6 @@ body {
   background-size: cover;
 }
 
-#under-construction {
-  position: absolute;
-  left: 55%;
-  top: 7.5%;
-  width: 25%;
-  min-width: 300px;
-  color: white;
-  font-size: 2em;
-  letter-spacing: 0.1em;
-  text-shadow: 0px 2px black;
-  font-weight: 100;
-  line-height: 30px;
-}
-
 #section-1 {
   top: 25%;
   background: url(../images/suit.jpeg) no-repeat center center;
@@ -277,24 +263,6 @@ body {
   margin-top: -36px;
   margin-left: -5px;
   width: 0;
-}
-
-#projects-radio-wrapper {
-  height: 34px;
-  width: 250px;
-  position: absolute;
-  left: 50%;
-  margin-left: -300px;
-  margin-top: 135px;
-  top: 28%;
-  z-index: 900;
-  text-align: center;
-}
-
-.projects-radio {
-  width: 22%;
-  vertical-align: top;
-  margin-right: -30px;
 }
 
 #section-2 {
