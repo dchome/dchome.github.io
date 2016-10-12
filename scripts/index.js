@@ -28,6 +28,9 @@ var danQuery = {
 
   handleNavSelect: function(idx) {
     $('#control-' + idx).prop('checked', true);
+    setTimeout(function() {
+      danQuery.handleProjectNav(idx)
+    }, 600);
   },
 
   headingsDictionary: {
@@ -56,6 +59,14 @@ var danQuery = {
         $(this).width(0);
       }
     })
+  },
+
+  handleProjectNav(idx) {
+    if(idx === 2) {
+      $('#project-nav').fadeIn('slow');
+    } else {
+      $('#project-nav').fadeOut('slow');
+    }
   }
 }
 
@@ -104,5 +115,14 @@ $(document).ready(function(){
   $('.nav-radio').click(function(event){
     danQuery.scrollToSection($('#section-' + event.target.id.split("").pop()));
   });
+
+  $('.project-li').click(function(event){
+    if($(this).hasClass('selected')) {
+      $(this).removeClass('selected');
+    } else {
+      $('.project-li').removeClass('selected');
+      $(this).addClass('selected');
+    }
+  })
 
 });

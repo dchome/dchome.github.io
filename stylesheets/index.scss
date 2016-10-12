@@ -83,17 +83,18 @@ body {
   margin-left: 10px;
 }
 
-.nav-radio:checked + a, .nav-radio:hover + a, .project-li:hover {
-  color: black;
-  background-color: rgba(255,255,255,0.5);
-}
 
-.alt-radio + a {
+.alt-radio, .alt-radio + a {
   background-color: rgba(0,0,0,0.5);
   -webkit-transition: all 0.8s ease;
   -moz-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
   transition: all 0.8s ease;
+}
+
+.nav-radio:checked + a, .nav-radio:hover + a, .project-li:hover, .selected {
+  color: black;
+  background-color: rgba(255,255,255,0.5);
 }
 
 .alt-radio:checked +a, .alt-radio:hover + a {
