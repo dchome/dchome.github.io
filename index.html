@@ -13,8 +13,16 @@
   <div id="roll-wrapper">
     <input type="radio" name="radio-set" class='nav-radio' id="control-0"/><a class="nav-link" id='home-link' href="section-0">Home</a>
     <input type="radio" name="radio-set" class='nav-radio' id="control-1"/><a class="nav-link" id='about-link' href="#section-1">About</a>
+
     <input type="radio" name="radio-set" class='nav-radio' id="control-2"/><a class="nav-link" id='projects-link' href="#section-2">Projects</a>
-    <input type="radio" name="radio-set" class='nav-radio' id="control-3"/><a class="nav-link" id='contact-link' href="#section-4">Contact</a>
+
+    <ul id='project-nav'>
+      <li class='project-li alt-radio' id=project-0>{{DLx}}</li>
+      <li class='project-li alt-radio' id=project-1>Picture This</li>
+      <li class='project-li alt-radio' id=project-2>There's A Board</li>
+    </ul>
+
+    <input type="radio" name="radio-set" class='nav-radio' id="control-3"/><a class="nav-link" id='contact-link' href="#section-3">Contact</a>
     <div id='col-left'>
       <div id="headings">
         <h1 id='main-heading'>Daniel Homer</h1>
@@ -81,9 +89,65 @@
       <section class="topic-section grayscale" id="section-2">
         <div class='inner-section'>
           <div class="col mid" id="mid-2">
-            <p>This is Section 2</p>
+            <div class='project-description'>
+              <a href='https://github.com/digitallinguistics'>
+                <img class='proj proj-0' src='images/dlx.png'/>
+                <h1 class='proj proj-0'>Digital Linguistics <br> (in Progress)</h1>
+              </a>
+
+              <a href='https://github.com/dchome/Picture-This-Frontend'>
+                <img class='proj proj-1' src='images/picture-this.png'/>
+                <h1 class='proj proj-1'>Picture This</h1>
+              </a>
+
+              <a href='https://github.com/nyc-rock-doves-2016/Theres-A-Board'>
+                <img class='proj proj-2' src='images/theres-a-board.png'/>
+                <h1 class='proj proj-2'>There's a Board</h1>
+              </a>
+
+              <h2 class='proj proj-heading'>The Problem</h2>
+              <p class='proj proj-0'>
+                Academic linguists often work with electronic versions of texts, but no standardized database, or API for interacting with texts, currently exists. As a consequence, linguists have no easy way to organize, analyze or access the massive documents, and collections of documents, they need for their research.
+              </p>
+
+              <p class='proj proj-1'>
+                People love sharing photos and people love games. Wouldn't it be great if there were a a mobile app that allowed users to share photos in a structured, gameified fashion?
+              </p>
+
+              <p class='proj proj-2'>
+                Earlier this year I attended Dev Bootcamp (DBC), a 19-week intensive web development program in Manhattan. DBC had a robust peer-mentoring program, where more advanced students could sign up to mentor less advanced ones. Every day at lunch, the staff would remind us to sign up by saying, "There's a board," and pointing to an old-fashioned signup board in the corner. Surely a web development program deserved a web-based system.
+              </p>
+
+            </div>
           </div>
           <div class="col right" id="right-2">
+            <div class='project-description'>
+              <h2 class=' proj proj-heading'>Our Solution</h2>
+              <p class='proj proj-0'>
+                Introducing Digital Lingustics, a project that allows linguists to store, access, and search linguistic texts. The project comprises three components: a standard data format (JSON) for storing linguistic data; a standardized API for accessing linguistic texts that have been stored in the standardized format; and a website serving as a layman-friendly access tool for accessing a DLx-standardized database. DLx uses Javascript on the front-end, aiming to use vanilla JS as much as possible; Node on the back-end, and MongoDB for data storage.
+              </p>
+
+              <p class='proj proj-1'>
+                Picture this: an app that provides a simple game-like format for iPhone and Android. The app allows users to create a game for a set of players, drawn from their contacts; players in that game then receive a prompt. Users have 24 hours to take and upload a photo matching the prompt, after which they can view everyone's submissions. Built using Cordova/Phonegap, with a JS/jQuery front-end and Rails backend, plus AWS bucket for photo handling.
+              </p>
+
+              <p class='proj proj-2'>
+                While still at DBC I and a few of my classmates developed and built There's A Board, a jQuery/Bootstrap/Rails app that modernized the mentoring signup process. Mentors and students could sign up, create appointments, sign up for existing appointments, and leave reviews and comments of past appointments. We used jQuery to AJAXify the front end, Bootstrap for styling and Rails on the back end.
+              </p>
+              <h2 class='proj proj-heading'>My Role</h2>
+              <p class='proj proj-0'>
+                I have primary responsibility for DLx's front-end. Accordingly, I am building front-end models (using ES6's classical syntactic sugar) and API utility methods, (using ES6 promises) including basic searching and CRUD functionality.
+              </p>
+
+              <p class='proj proj-1'>
+                I had sole responsibility for the Javascript and jQuery on Picture This's front end, as well as implementation of Cordova/Phonegap and setting up the testing environment for it. I designed and implemented the HTML structure and the logic that controlled all user interaction with the app. I also contributed to teh design and implementation of the API (in Ruby on Rails) used to communicate with the PostgreSQL and AWS databases.
+              </p>
+
+              <p class='proj proj-2'>
+                My primary responsibility was back end logic: I set up controllers, wrote class methods for our models, and handled simple filtering algorithms that allowed users to filter appointments by subject. I also took a leadership role on the team of 4 students: I organized the development process and served as point person in our check-in meetings.
+              </p>
+
+            </div>
           </div>
         </div>
       </section>

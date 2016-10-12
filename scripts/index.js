@@ -28,13 +28,17 @@ var danQuery = {
 
   handleNavSelect: function(idx) {
     $('#control-' + idx).prop('checked', true);
+    setTimeout(function() {
+      danQuery.handleProjectNav(idx)
+    }, 600);
   },
 
   headingsDictionary: {
     0: ['Daniel Homer', 'Full-Stack Web Developer'],
     1: ['About Me', ''],
     2: ['Projects', ''],
-    3: ['Contact Me', '']
+    3: ['Contact Me', ''],
+    4: ['Contact Me', '']
   },
 
   handleHeadings(idx) {
@@ -56,14 +60,23 @@ var danQuery = {
         $(this).width(0);
       }
     })
+  },
+
+  handleProjectNav(idx) {
+    if(idx === 2) {
+      $('#project-nav').fadeIn('slow');
+    } else {
+      $('#project-nav').fadeOut('slow');
+    }
   }
 }
 
 $(document).ready(function(){
-  var windowHeight = $(window).height();
+  var windowHeight = 0;
+  ($(window).height() > 600) ? windowHeight = $(window).height() : windowHeight = 600;
 
   var getAnimationIdx = function() {
-    if ($(window).width() > 850) {
+    if ($(window).width() > 700) {
       return Math.floor(($('body').scrollTop() + windowHeight/2)/windowHeight);
     } else {
       return Math.floor(($('body').scrollTop() + windowHeight/2)/(windowHeight * 2))
@@ -83,7 +96,8 @@ $(document).ready(function(){
   danQuery.handleColumns(oldIdx);
 
   $(window).resize(function(){
-    windowHeight = $(window).height();
+    ($(window).height() > 600) ? windowHeight = $(window).height() : windowHeight = 600;
+    oldIdx = getAnimationIdx();
   });
 
   $(window).scroll(function(){
@@ -104,5 +118,22 @@ $(document).ready(function(){
   $('.nav-radio').click(function(event){
     danQuery.scrollToSection($('#section-' + event.target.id.split("").pop()));
   });
+
+  $('.project-li').click(function(event){
+    var idx = event.target.id.split("").pop()
+    if($(this).hasClass('selected')) {
+      $(this).removeClass('selected');
+      $('.proj').fadeOut('slow');
+    } else {
+      $('.project-li').removeClass('selected');
+      $(this).addClass('selected');
+      $('.proj').fadeOut('slow', function(){
+      });
+      setTimeout(function(){
+        $('.proj-heading').fadeIn('slow');
+        $('.proj-' + idx).fadeIn('slow');
+      }, 600);
+    }
+  })
 
 });
